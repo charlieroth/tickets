@@ -6,7 +6,8 @@ defmodule Tickets.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      BookingsPipeline
+      BookingsPipeline,
+      NotificationsPipeline
     ]
 
     opts = [strategy: :one_for_one, name: Tickets.Supervisor]

@@ -12,11 +12,6 @@ defmodule Tickets do
     Enum.filter(@users, &(&1.id in ids))
   end
   
-  def tickets_available?("cinema") do
-    Process.sleep(Enum.random(100..200))
-    false
-  end
-
   def tickets_available?(_event) do
     Process.sleep(Enum.random(100..200))
     true
@@ -24,6 +19,12 @@ defmodule Tickets do
   
   def create_ticket(_user, _event) do
     Process.sleep(Enum.random(250..1000))
+  end
+
+  def insert_all_tickets(messages) do
+    # Normally `Repo.insert_all/3` if using Ecto
+    Process.sleep(Enum.count(messages) * 250)
+    messages
   end
   
   def send_email(_user) do

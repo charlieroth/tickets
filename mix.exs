@@ -21,7 +21,8 @@ defmodule Tickets.MixProject do
   defp deps do
     [
       {:broadway, "~> 0.6.2"},
-      {:broadway_rabbitmq, "~> 0.6.5"}
+      {:broadway_rabbitmq, "~> 0.6.5"},
+      {:amqp, "~> 1.3"}
     ]
   end
 end
